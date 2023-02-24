@@ -3,7 +3,7 @@ const getStyles = () => ({
         fontSize: 50,
         padding: '15px',
         marginBottom: '30px',
-        color: '#f0f2f5',
+        color: 'white',
     }
 })
 

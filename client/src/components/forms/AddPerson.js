@@ -48,11 +48,11 @@ const AddPerson = () => {
             style={{marginBottom: '50px'}}>
             <Form.Item name='firstName'
                rules={[{ required: true, message: 'Please input first name!'}]}>
-                <Input placeholder='John' />
+                <Input placeholder='FirstName' />
             </Form.Item>
             <Form.Item name='lastName'
                rules={[{ required: true, message: 'Please input last name!'}]}>
-                <Input placeholder='Smith' />
+                <Input placeholder='LastName' />
             </Form.Item>
             <Form.Item shouldUpdate={true}>
                 {() => (

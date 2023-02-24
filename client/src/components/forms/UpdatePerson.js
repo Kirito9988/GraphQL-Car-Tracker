@@ -43,10 +43,12 @@ const UpdatePerson = props => {
             rules={[{ required: true, message: 'Please input first name!'}]}>
             <Input placeholder='John' />
         </Form.Item>
+       
         <Form.Item name='lastName'
             rules={[{ required: true, message: 'Please input last name!'}]}>
             <Input placeholder='Smith' />
         </Form.Item>
+       
         <Form.Item shouldUpdate={true}>
             {() => (
                 <Button

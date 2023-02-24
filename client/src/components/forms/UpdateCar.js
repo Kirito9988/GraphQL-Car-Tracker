@@ -72,19 +72,23 @@ const UpdateCar = props => {
                rules={[{ required: true, message: 'Please input car company!'}]}>
                 <Input/>
             </Form.Item>
+           
             <Form.Item name='model' style={{marginBottom: '8px', width: '18%'}}
                rules={[{ required: true, message: 'Please input car model!'}]}>
                 <Input/>
             </Form.Item>
+           
             <Form.Item name='year' style={{marginBottom: '8px'}}
                rules={[{ required: true, message: 'Please input car year!'}]}>
                 <InputNumber max={2023} min={100} />
             </Form.Item>
+           
             <Form.Item name='price' style={{marginBottom: '8px'}}
                rules={[{ required: true, message: 'Please input car price!'}]}>
                 <InputNumber min={1000} formatter={(value) => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                     parser={(value) => value.replace(/\$\s?|(,*)/g, '')}/>
             </Form.Item>
+           
             <Form.Item name='personId' style={{marginBottom: '8px', width: '18%'}}
                rules={[{ required: true, message: 'Please select person ID!'}]}>
                 <Select>
@@ -94,6 +98,7 @@ const UpdateCar = props => {
                   {/* <Option value="3">Steven</Option> */}
                 </Select>
             </Form.Item>
+       
         <Form.Item shouldUpdate={true}>
             {() => (
                 <Button

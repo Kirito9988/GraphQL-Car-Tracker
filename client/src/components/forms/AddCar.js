@@ -47,12 +47,12 @@ const AddCar = props => {
             
             <Form.Item name='company' style={{marginBottom: '8px', width: '18%'}}
                rules={[{ required: true, message: 'Please input car company!'}]}>
-                <Input placeholder='Toyota' />
+                <Input placeholder='Car Company' />
             </Form.Item>
             
             <Form.Item name='model' style={{marginBottom: '8px', width: '18%'}}
-               rules={[{ required: true, message: 'Please input car model!'}]}>
-                <Input placeholder='Corolla' />
+               rules={[{ required: true, message: 'Please input car name!'}]}>
+                <Input placeholder='Car Name' />
             </Form.Item>
 
             <Form.Item name='year' style={{marginBottom: '8px'}}
@@ -67,7 +67,7 @@ const AddCar = props => {
             </Form.Item>
             
             <Form.Item name='personId' style={{marginBottom: '8px', width: '18%'}}
-               rules={[{ required: true, message: 'Please select person ID!'}]}>
+               rules={[{ required: true, message: 'Please select a person!'}]}>
                 <Select placeholder="Select Person">
                     { people.map(person => 
                         <Option key={person.id} value={person.id}>{person.firstName} {person.lastName}</Option>
