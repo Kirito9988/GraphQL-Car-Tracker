@@ -1,6 +1,5 @@
 import { gql } from 'apollo-server-express';
 import lodash from 'lodash';
-
 const {find} = lodash;
 const {remove} = lodash;
 const {filter} = lodash;
@@ -27,7 +26,7 @@ const Cars = [
   {
     id: '1',
     year: '2019',
-    make: 'Toyota',
+    company: 'Toyota',
     model: 'Corolla',
     price: '40000',
     personId: '1'
@@ -35,7 +34,7 @@ const Cars = [
   {
     id: '2',
     year: '2018',
-    make: 'Lexus',
+    company: 'Lexus',
     model: 'LX 600',
     price: '13000',
     personId: '1'
@@ -43,7 +42,7 @@ const Cars = [
   {
     id: '3',
     year: '2017',
-    make: 'Honda',
+    company: 'Honda',
     model: 'Civic',
     price: '20000',
     personId: '1'
@@ -51,7 +50,7 @@ const Cars = [
   {
     id: '4',
     year: '2019',
-    make: 'Acura ',
+    company: 'Acura ',
     model: 'MDX',
     price: '60000',
     personId: '2'
@@ -59,7 +58,7 @@ const Cars = [
   {
     id: '5',
     year: '2018',
-    make: 'Ford',
+    company: 'Ford',
     model: 'Focus',
     price: '35000',
     personId: '2'
@@ -67,7 +66,7 @@ const Cars = [
   {
     id: '6',
     year: '2017',
-    make: 'Honda',
+    company: 'Honda',
     model: 'Pilot',
     price: '45000',
     personId: '2'
@@ -75,7 +74,7 @@ const Cars = [
   {
     id: '7',
     year: '2019',
-    make: 'Volkswagen',
+    company: 'Volkswagen',
     model: 'Golf',
     price: '40000',
     personId: '3'
@@ -83,7 +82,7 @@ const Cars = [
   {
     id: '8',
     year: '2018',
-    make: 'Kia',
+    company: 'Kia',
     model: 'Sorento',
     price: '45000',
     personId: '3'
@@ -91,7 +90,7 @@ const Cars = [
   {
     id: '9',
     year: '2017',
-    make: 'Volvo',
+    company: 'Volvo',
     model: 'XC40',
     price: '55000',
     personId: '3'
@@ -108,7 +107,7 @@ const typeDefs = gql`
   type Car {
     id: String!
     year: Int
-    make: String
+    company: String
     model: String
     price: Float
     personId: String!
@@ -128,8 +127,8 @@ const typeDefs = gql`
     updatePerson(id: String!, firstName: String, lastName: String): Person
     removePerson(id: String!): Person
 
-    addCar(id: String!, year: Int!, make: String!, model: String!, price: Float!, personId: String!): Car
-    updateCar(id: String!, year: Int, make: String, model: String, price: Float, personId: String): Car
+    addCar(id: String!, year: Int!, company: String!, model: String!, price: Float!, personId: String!): Car
+    updateCar(id: String!, year: Int, company: String, model: String, price: Float, personId: String): Car
     removeCar(id: String!): Car
     removePersonCars(personId: String!): [Car]
   }
@@ -187,7 +186,7 @@ const resolvers = {
       const newCar = {
         id: args.id,
         year: args.year,
-        make: args.make,
+        company: args.company,
         model: args.model,
         price: args.price,
         personId: args.personId
@@ -203,7 +202,7 @@ const resolvers = {
       }
 
       car.year = args.year
-      car.make = args.make
+      car.company = args.company
       car.model = args.model
       car.price = args.price
       car.personId = args.personId

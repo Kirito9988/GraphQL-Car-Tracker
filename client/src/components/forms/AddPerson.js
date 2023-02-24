@@ -45,7 +45,7 @@ const AddPerson = () => {
             onFinish={onFinish}
             name='add-person-form' 
             layout='inline' size='large' 
-            style={{marginBottom: '40px'}}>
+            style={{marginBottom: '50px'}}>
             <Form.Item name='firstName'
                rules={[{ required: true, message: 'Please input first name!'}]}>
                 <Input placeholder='John' />

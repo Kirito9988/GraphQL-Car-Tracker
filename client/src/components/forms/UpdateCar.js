@@ -8,7 +8,7 @@ const { Option } = Select
 
 const UpdateCar = props => {
     const [updateCar] = useMutation(UPDATE_CAR);
-    const { id, make, model, year, price, personId, people } = props
+    const { id, company, model, year, price, personId, people } = props
 
     const [form] = Form.useForm()
     const [, forceUpdate] = useState()
@@ -18,7 +18,7 @@ const UpdateCar = props => {
     }, [])
 
     const onFinish = values => {
-        const { make, model, year, price, personId } = values
+        const { company, model, year, price, personId } = values
         const currentPersonId = props.personId
         const newPersonId = personId
         const idArray = [currentPersonId, newPersonId]
@@ -28,7 +28,7 @@ const UpdateCar = props => {
                     updateCar({
                         variables: {
                             id,
-                            make,
+                            company,
                             model,
                             year,
                             price,
@@ -42,7 +42,7 @@ const UpdateCar = props => {
                 updateCar({
                     variables: {
                         id,
-                        make,
+                        company,
                         model,
                         year,
                         price,
@@ -61,15 +61,15 @@ const UpdateCar = props => {
     layout='inline'
     onFinish={onFinish}
     initialValues={{
-        make: make,
+        company: company,
         model: model,
         year: year,
         price: price,
         personId: personId
     }}
     >
-         <Form.Item name='make' style={{marginBottom: '8px', width: '18%'}}
-               rules={[{ required: true, message: 'Please input car make!'}]}>
+         <Form.Item name='company' style={{marginBottom: '8px', width: '18%'}}
+               rules={[{ required: true, message: 'Please input car company!'}]}>
                 <Input/>
             </Form.Item>
             <Form.Item name='model' style={{marginBottom: '8px', width: '18%'}}
@@ -100,7 +100,7 @@ const UpdateCar = props => {
                 type='primary'
                 htmlType='submit'
                 disabled={
-                    (!form.isFieldTouched('make') && !form.isFieldTouched('model') && !form.isFieldTouched('year') && !form.isFieldTouched('price') && !form.isFieldTouched('personId')) ||
+                    (!form.isFieldTouched('company') && !form.isFieldTouched('model') && !form.isFieldTouched('year') && !form.isFieldTouched('price') && !form.isFieldTouched('personId')) ||
                     form.getFieldsError().filter(({ errors }) => errors.length).length
                 }
                 >Update Car</Button>

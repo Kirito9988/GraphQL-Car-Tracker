@@ -14,7 +14,7 @@ export const GET_ALL_CARS = gql`
     query {
         cars {
             id
-            make
+            company
             model
             year
             price
@@ -28,7 +28,7 @@ export const GET_CARS = gql`
         personCars(personId: $personId) {
             id
             year
-            make
+            company
             model
             price
             personId
@@ -57,11 +57,11 @@ export const ADD_PERSON = gql`
 `
 
 export const ADD_CAR = gql`
-    mutation AddCar($id: String!, $year: Int!, $make: String!, $model: String!, $price: Float!, $personId: String!) {
-        addCar(id: $id, year: $year, make: $make, model: $model, price: $price, personId: $personId) {
+    mutation AddCar($id: String!, $year: Int!, $company: String!, $model: String!, $price: Float!, $personId: String!) {
+        addCar(id: $id, year: $year, company: $company, model: $model, price: $price, personId: $personId) {
             id
             year
-            make
+            company
             model
             price
             personId
@@ -80,11 +80,11 @@ export const UPDATE_PERSON = gql`
 `
 
 export const UPDATE_CAR = gql`
-    mutation UpdateCar($id: String!, $year: Int!, $make: String!, $model: String!, $price: Float!, $personId: String!) {
-        updateCar(id: $id, year: $year, make: $make, model: $model, price: $price, personId: $personId) {
+    mutation UpdateCar($id: String!, $year: Int!, $company: String!, $model: String!, $price: Float!, $personId: String!) {
+        updateCar(id: $id, year: $year, company: $company, model: $model, price: $price, personId: $personId) {
             id
             year
-            make
+            company
             model
             price
             personId
@@ -107,7 +107,7 @@ export const REMOVE_CAR = gql`
         removeCar(id: $id) {
             id
             year
-            make
+            company
             model
             price
             personId
@@ -120,7 +120,7 @@ export const REMOVE_PERSON_CARS = gql`
         removePersonCars(personId: $personId) {
             id
             year
-            make
+            company
             model
             price
             personId

@@ -19,14 +19,14 @@ const AddCar = props => {
     }, []);
 
     const onFinish = values => {
-        const { year, make, model, price, personId} = values;
+        const { year, company, model, price, personId} = values;
         const id = uuidv4();
         
         addCar({
             variables: {
                 id,
                 year,
-                make,
+                company,
                 model,
                 price,
                 personId
@@ -45,8 +45,8 @@ const AddCar = props => {
             layout='inline' 
             style={{marginBottom: '20px', width: '100%'}}>
             
-            <Form.Item name='make' style={{marginBottom: '8px', width: '18%'}}
-               rules={[{ required: true, message: 'Please input car make!'}]}>
+            <Form.Item name='company' style={{marginBottom: '8px', width: '18%'}}
+               rules={[{ required: true, message: 'Please input car company!'}]}>
                 <Input placeholder='Toyota' />
             </Form.Item>
             

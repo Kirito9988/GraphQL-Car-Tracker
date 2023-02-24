@@ -30,9 +30,9 @@ const ShowPage = () => {
         <>
             <div style={styles.list}><li><Link to='/' ><h1>Back to Home</h1></Link></li></div>
             <List grid={{gutter: 20, column: 1}} style={styles.list}>
-            {data.personCars.map(({id, make, model, personId, price, year}) => (
+            {data.personCars.map(({id, company, model, personId, price, year}) => (
                 <List.Item key={id}>
-                    <Card title={make} style={styles.card}>
+                    <Card title={company} style={styles.card}>
                         <p>Model: {model}</p>
                         <p>Year: {year}</p>
                         <p>Price: ${price}</p>
