@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { List, Card } from 'antd'
 import { useQuery } from '@apollo/client'
 import { GET_CARS } from '../queries'
@@ -28,9 +28,8 @@ const ShowPage = () => {
 
     return (
         <>
-            <div style={styles.list}><li><Link to='/' ><h1>Back to Home</h1></Link></li></div>
             <List grid={{gutter: 20, column: 1}} style={styles.list}>
-            {data.personCars.map(({id, company, model, personId, price, year}) => (
+            {data.personCars.map(({id, company, model, price, year}) => (
                 <List.Item key={id}>
                     <Card title={company} style={styles.card}>
                         <p>Model: {model}</p>

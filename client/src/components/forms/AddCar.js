@@ -10,7 +10,13 @@ const { Option } = Select;
 const AddCar = props => {
     const { people } = props;
     const [addCar] = useMutation(ADD_CAR);
-
+    const getStyles = () => ({
+        title: {
+            fontSize: 20,
+            color: 'black',
+        }
+    })
+    const styles = getStyles();
     const [form] = Form.useForm();
     const [, forceUpdate] = useState();
 
@@ -38,57 +44,54 @@ const AddCar = props => {
     }
 
     return (
-        <Form
-            form={form} 
+        <><Form
+            form={form}
             onFinish={onFinish}
             name='add-car-form' size='medium'
-            layout='inline' 
-            style={{marginBottom: '20px', width: '100%'}}>
-            
-            <Form.Item name='company' style={{marginBottom: '8px', width: '18%'}}
-               rules={[{ required: true, message: 'Please input car company!'}]}>
+            layout='inline'
+            style={{ marginBottom: '20px', width: '100%' }}>
+
+            <Form.Item name='company' style={{ marginBottom: '8px', width: '18%' }}
+                rules={[{ required: true, message: 'Please input car company!' }]}>
                 <Input placeholder='Car Company' />
             </Form.Item>
-            
-            <Form.Item name='model' style={{marginBottom: '8px', width: '18%'}}
-               rules={[{ required: true, message: 'Please input car name!'}]}>
+
+            <Form.Item name='model' style={{ marginBottom: '8px', width: '18%' }}
+                rules={[{ required: true, message: 'Please input car name!' }]}>
                 <Input placeholder='Car Name' />
             </Form.Item>
 
-            <Form.Item name='year' style={{marginBottom: '8px'}}
-               rules={[{ required: true, message: 'Please input car year!'}]}>
+            <Form.Item name='year' style={{ marginBottom: '8px' }}
+                rules={[{ required: true, message: 'Please input car year!' }]}>
                 <InputNumber placeholder='2023' max={2023} min={100} />
             </Form.Item>
-            
-            <Form.Item name='price' style={{marginBottom: '8px'}}
-               rules={[{ required: true, message: 'Please input car price!'}]}>
+
+            <Form.Item name='price' style={{ marginBottom: '8px' }}
+                rules={[{ required: true, message: 'Please input car price!' }]}>
                 <InputNumber min={2000} formatter={(value) => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                    parser={(value) => value.replace(/\$\s?|(,*)/g, '')}/>
+                    parser={(value) => value.replace(/\$\s?|(,*)/g, '')} />
             </Form.Item>
-            
-            <Form.Item name='personId' style={{marginBottom: '8px', width: '18%'}}
-               rules={[{ required: true, message: 'Please select a person!'}]}>
+
+            <Form.Item name='personId' style={{ marginBottom: '8px', width: '18%' }}
+                rules={[{ required: true, message: 'Please select a person!' }]}>
                 <Select placeholder="Select Person">
-                    { people.map(person => 
-                        <Option key={person.id} value={person.id}>{person.firstName} {person.lastName}</Option>
+                    {people.map(person => <Option key={person.id} value={person.id}>{person.firstName} {person.lastName}</Option>
                     )}
-                  {/* <Option value="3">Steven</Option> */}
+                    {/* <Option value="3">Steven</Option> */}
                 </Select>
             </Form.Item>
-            
+
             <Form.Item shouldUpdate={true}>
                 {() => (
                     <Button type='primary' htmlType='submit'
-                    disabled={
-                        !form.isFieldsTouched(true) || 
-                        form.getFieldsError().filter(({errors}) => errors.length).length
-                        }>
+                        disabled={!form.isFieldsTouched(true) ||
+                            form.getFieldsError().filter(({ errors }) => errors.length).length}>
                         Add Car
                     </Button>
                 )}
             </Form.Item>
-        
-        </Form>
+
+        </Form><h2 style={styles.title}>RECORDS</h2></>
     )
 }
 

@@ -40,32 +40,30 @@ const AddPerson = () => {
     }
 
     return (
-        <Form
-            form={form} 
+        <><Form
+            form={form}
             onFinish={onFinish}
-            name='add-person-form' 
-            layout='inline' size='large' 
-            style={{marginBottom: '50px'}}>
+            name='add-person-form'
+            layout='inline' size='large'
+            style={{ marginBottom: '50px' }}>
             <Form.Item name='firstName'
-               rules={[{ required: true, message: 'Please input first name!'}]}>
+                rules={[{ required: true, message: 'Please input first name!' }]}>
                 <Input placeholder='FirstName' />
             </Form.Item>
             <Form.Item name='lastName'
-               rules={[{ required: true, message: 'Please input last name!'}]}>
+                rules={[{ required: true, message: 'Please input last name!' }]}>
                 <Input placeholder='LastName' />
             </Form.Item>
             <Form.Item shouldUpdate={true}>
                 {() => (
                     <Button type='primary' htmlType='submit'
-                    disabled={
-                        !form.isFieldsTouched(true) || 
-                        form.getFieldsError().filter(({errors}) => errors.length).length
-                        }>
+                        disabled={!form.isFieldsTouched(true) ||
+                            form.getFieldsError().filter(({ errors }) => errors.length).length}>
                         Add Person
                     </Button>
                 )}
             </Form.Item>
-        </Form>
+        </Form></>
     )
 }
 

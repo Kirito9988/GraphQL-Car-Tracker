@@ -26,7 +26,7 @@ const Cars = [
   {
     id: '1',
     year: '2019',
-    company: 'Toyota',
+    make: 'Toyota',
     model: 'Corolla',
     price: '40000',
     personId: '1'
@@ -34,7 +34,7 @@ const Cars = [
   {
     id: '2',
     year: '2018',
-    company: 'Lexus',
+    make: 'Lexus',
     model: 'LX 600',
     price: '13000',
     personId: '1'
@@ -42,7 +42,7 @@ const Cars = [
   {
     id: '3',
     year: '2017',
-    company: 'Honda',
+    make: 'Honda',
     model: 'Civic',
     price: '20000',
     personId: '1'
@@ -50,7 +50,7 @@ const Cars = [
   {
     id: '4',
     year: '2019',
-    company: 'Acura ',
+    make: 'Acura ',
     model: 'MDX',
     price: '60000',
     personId: '2'
@@ -58,7 +58,7 @@ const Cars = [
   {
     id: '5',
     year: '2018',
-    company: 'Ford',
+    make: 'Ford',
     model: 'Focus',
     price: '35000',
     personId: '2'
@@ -66,7 +66,7 @@ const Cars = [
   {
     id: '6',
     year: '2017',
-    company: 'Honda',
+    make: 'Honda',
     model: 'Pilot',
     price: '45000',
     personId: '2'
@@ -74,7 +74,7 @@ const Cars = [
   {
     id: '7',
     year: '2019',
-    company: 'Volkswagen',
+    make: 'Volkswagen',
     model: 'Golf',
     price: '40000',
     personId: '3'
@@ -82,7 +82,7 @@ const Cars = [
   {
     id: '8',
     year: '2018',
-    company: 'Kia',
+    make: 'Kia',
     model: 'Sorento',
     price: '45000',
     personId: '3'
@@ -90,7 +90,7 @@ const Cars = [
   {
     id: '9',
     year: '2017',
-    company: 'Volvo',
+    make: 'Volvo',
     model: 'XC40',
     price: '55000',
     personId: '3'
